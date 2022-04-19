@@ -1,0 +1,303 @@
+﻿     /* Font Import */
+        @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+        /* General Styling */
+        body {
+            color: #636363;
+            font-family: 'Roboto',sans-serif;
+            font-size: .7em;
+        }
+
+        h1, h2 {
+            font-family: 'Roboto Condensed', sans-serif;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        h4 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 14pt;
+        }
+
+        a, a:hover {
+            color: #CE1141;
+            text-decoration: none;
+        }
+
+        section:nth-of-type(3) {
+            padding-top: 10px;
+        }
+        section:last-of-type {
+            padding-bottom: 40px;
+        }
+
+        /* Overrides */
+        .btn-primary{
+            background-color: #ce1141;
+            border: none;
+            border-radius: 0;
+        }
+        .btn-primary:hover {
+            background-color: #ce1141;
+        }
+        form .form-control {
+            border-radius: 0;
+            resize: none;
+        }
+
+        /* Custom Classes */
+        .subtext {
+            margin-top: 10px;
+            margin-left: 2px;
+            font-size: .9em;
+            line-height: 1.5em;
+            color: #929292;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #fff;
+            border: 1px solid #e6e6e6;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+        nav.container {
+            padding: 0;
+        }
+        .navTop {
+            border-bottom: 1px solid #e6e6e6;
+        }
+        .navTop div, .navBottom div {
+            padding: 8px 20px;
+        }
+        #pageTitle {
+            color: #ce1141;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Hero Img */
+        .heroImg {
+            position: relative;
+        }
+        .heroImg img {
+            width: 100%;
+            min-width: 1140px;
+        }
+        .heroText {
+            position: absolute;
+            bottom: 50px;
+            color: #fff;
+            width: 100%;
+            z-index: 10;
+        }
+
+        /* Alert Section */
+        .alertMessage {
+            width: 100%;
+            background-color: #ce1141;
+            color: #fff;
+            font-size: 1.2em;
+            padding: 12px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        /* Accordion */
+        .panel {
+            margin: 40px auto;
+        }
+
+        .panel-title {
+            border-top: 1px solid #3d3d3d;
+            font-size: 14pt;
+            font-weight: bold;
+            padding: 7px 0;
+            text-transform: uppercase;
+            width: 100%;
+        }
+
+        .panel-heading .accordion-toggle:after {
+            border: 1px solid #3d3d3d;
+            content: url('./images/icons/accordion-minus.png');
+            float: right;
+            margin-top: -8px;
+            width: 27px;
+            height: 27px;
+            text-align: center;
+            font-weight: normal;
+            color: #3d3d3d;
+        }
+
+        .panel a.collapsed .accordion-toggle:after {
+            border: 1px solid #3d3d3d;
+            /* symbol for "collapsed" panels */
+            content: url('./images/icons/accordion-plus.png');
+            margin-top: -8px;
+            width: 27px;
+            height: 27px;
+            text-align: center;
+            font-weight: normal;
+            color: #3d3d3d;
+        }
+
+        .panel-body {
+            padding-top: 15px;
+            padding-bottom: 45px;
+        }
+
+        /* Form Sections */
+        .formSection {
+            background-color: #f4f4f4;
+            border: 1px solid #dcdcdc;
+            padding: 30px 40px;
+            margin-bottom: 20px;
+        }
+        .formSection h2 {
+            font-size: 14pt;
+            color: #4d4d4d;
+            margin-bottom: 1em;
+        }
+
+        #formSidebar .stick {
+            position: fixed;
+            top: 100px;
+            width: 23.5%;
+            margin-left: 45%;
+        }
+
+        #formSidebar .formSection {
+            padding: 15px 15px 0 15px;
+        }
+        #formSidebar a {
+            color: #636363;
+            text-decoration: underline;
+        }
+        .sidebarTitle {
+            background-color: #636363;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: .9em;
+            padding: 5px 15px;
+        }
+        #consentGroup, #releaseGroup {
+            margin: 1.75em 0;
+        }
+        #checkConsent, #checkRelease {
+            float: left;
+            margin-right: 10px;
+            margin-top: 8px;
+        }
+        #checkConsent + label, #checkRelease + label {
+            overflow: auto;
+            display: block;
+            line-height: 1.75em;
+        }
+        #submitButton {
+            margin-top: 2em;
+        }
+        #submitButton button {
+            width: 120px;
+            text-transform: uppercase;
+        }
+
+
+        /* Web Form */
+
+        .control:checked ~ .conditional,
+        #immigrant:checked ~ .conditional,
+        #required-2:checked ~ .conditional
+        #option-2:checked ~ .conditional {
+            clip: auto;
+            height: auto;
+            margin: 0;
+            overflow: visible;
+            position: static;
+            width: auto;
+        }
+
+        .control:not(:checked) ~ .conditional,
+        #immigrant:not(:checked) ~ .conditional,
+        #required-2:not(:checked) ~ .conditional,
+        #option-2:not(:checked) ~ .conditional {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+        #regForm {
+            margin: 0 auto;
+            padding: 40px;
+            width: 100%;
+            min-width: 300px;
+        }
+        .tab h1 {
+            text-align: center;
+        }
+        input, button, textarea, select {
+            border-radius: 4px;
+        }
+        input[type="text"], input[type="submit"] {
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+            border: 1px solid #aaaaaa;
+        }
+        /* Mark input boxes that gets an error on validation: */
+        input.invalid {
+            background-color: #ffdddd;
+        }
+        /* Hide all steps by default: */
+        .tab {
+            display: none;
+        }
+        button {
+            background-color: #ce1141;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        #prevBtn {
+            background-color: #bbbbbb;
+        }
+        /* Make circles that indicate the steps of the form: */
+        .step {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #ce1141;
+            border: none;
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+        }
+        .step.active {
+            opacity: 1;
+        }
+        /* Mark the steps that are finished and valid: */
+        .step.finish {
+            background-color: #ce1141;
+        }
+
+        .RequiredFieldMessage
+{
+    color: Red;    
+    
+}

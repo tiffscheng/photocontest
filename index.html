@@ -1,0 +1,715 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="UTF-8" /><meta http-equiv="refresh" content="600; URL=SessionExpire.aspx" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <title>Weatherford Photo and Video Contest 2017</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" /><link href="/Photocontest/WebResource.axd?d=hcXDZhXiidgsQUtEo5iT38i7gFjtk9Oc_WqwmIMCHza_DUDaG37fszLQetp5PRwTGrV5EFGzxVjKjRZUeM66rOwTa1FSJXTNnGsxvorBlPWkQNtH3gXNGJIZeK4gBY4PdDdf2k9r5d_O6tUJ1dgNYYsDPeV7DwDuDelDUGQqGHA1&amp;t=636301097000000000" type="text/css" rel="stylesheet" /></head>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+
+
+<style>
+    /* Font Import */
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    /* General Styling */
+    body {
+        color: #636363;
+        font-family: 'Roboto',sans-serif;
+        font-size: 1em;
+    }
+
+    h1, h2 {
+        font-family: 'Roboto Condensed', sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    h4 {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 14pt;
+    }
+
+    a, a:hover {
+        color: #CE1141;
+        text-decoration: none;
+    }
+
+    section:nth-of-type(3) {
+        padding-top: 10px;
+    }
+    section:last-of-type {
+        padding-bottom: 40px;
+    }
+
+    /* Overrides */
+    .btn-primary{
+        background-color: #ce1141;
+        border: none;
+        border-radius: 0;
+    }
+    .btn-primary:hover {
+        background-color: #ce1141;
+    }
+    form .form-control {
+        border-radius: 0;
+        resize: none;
+    }
+
+    /* Custom Classes */
+    .subtext {
+        margin-top: 10px;
+        margin-left: 2px;
+        font-size: .9em;
+        line-height: 1.5em;
+        color: #929292;
+    }
+
+    /* Navbar */
+    nav {
+        background-color: #fff;
+        border: 1px solid #e6e6e6;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+    }
+    nav.container {
+        padding: 0;
+    }
+    .navTop {
+        border-bottom: 1px solid #e6e6e6;
+    }
+    .navTop div, .navBottom div {
+        padding: 8px 20px;
+    }
+    #pageTitle {
+        color: #ce1141 !important;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    /* Hero Img */
+    .heroImg {
+        position: relative;
+    }
+    .heroImg img {
+        width: 100%;
+        min-width: 1140px;
+    }
+    .heroText {
+        position: absolute;
+        bottom: 50px;
+        color: #fff;
+        width: 100%;
+        z-index: 10;
+    }
+
+    /* Alert Section */
+    .alertMessage {
+        width: 100%;
+        background-color: #ce1141;
+        color: #fff;
+        font-size: 1.2em;
+        padding: 12px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    /* Accordion */
+    .panel {
+        margin: 40px auto;
+    }
+
+    .panel-title {
+        border-top: 1px solid #3d3d3d;
+        font-size: 14pt;
+        font-weight: bold;
+        padding: 7px 0;
+        text-transform: uppercase;
+        width: 100%;
+    }
+
+    .panel-heading .accordion-toggle:after {
+        border: 1px solid #3d3d3d;
+        content: url('./images/icons/accordion-minus.png');
+        float: right;
+        margin-top: -8px;
+        width: 27px;
+        height: 27px;
+        text-align: center;
+        font-weight: normal;
+        color: #3d3d3d;
+    }
+
+    .panel a.collapsed .accordion-toggle:after {
+        border: 1px solid #3d3d3d;
+        /* symbol for "collapsed" panels */
+        content: url('./images/icons/accordion-plus.png');
+        margin-top: -8px;
+        width: 27px;
+        height: 27px;
+        text-align: center;
+        font-weight: normal;
+        color: #3d3d3d;
+    }
+
+    .panel-body {
+        padding-top: 15px;
+        padding-bottom: 45px;
+    }
+
+    /* Form Sections */
+    .formSection {
+        background-color: #f4f4f4;
+        border: 1px solid #dcdcdc;
+        padding: 30px 40px;
+        margin-bottom: 20px;
+    }
+    .formSection h2 {
+        font-size: 14pt;
+        color: #4d4d4d;
+        margin-bottom: 1em;
+    }
+
+    #formSidebar .stick {
+        position: fixed;
+        top: 100px;
+        width: 23.5%;
+        margin-left: 45%;
+    }
+
+    #formSidebar .formSection {
+        padding: 15px 15px 0 15px;
+    }
+    #formSidebar a {
+        color: #636363;
+        text-decoration: underline;
+    }
+    .sidebarTitle {
+        background-color: #636363;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: .9em;
+        padding: 5px 15px;
+    }
+    #consentGroup, #releaseGroup {
+        margin: 1.75em 0;
+    }
+    #checkConsent, #checkRelease {
+        float: left;
+        margin-right: 10px;
+        margin-top: 8px;
+    }
+    #checkConsent + label, #checkRelease + label {
+        overflow: auto;
+        display: block;
+        line-height: 1.75em;
+    }
+
+    #submitButton button {
+        width: 120px;
+        text-transform: uppercase;
+    }
+
+
+    /* Web Form */
+
+    .control:checked ~ .conditional,
+    #immigrant:checked ~ .conditional,
+    #required-2:checked ~ .conditional
+    #option-2:checked ~ .conditional {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
+
+    .control:not(:checked) ~ .conditional,
+    #immigrant:not(:checked) ~ .conditional,
+    #required-2:not(:checked) ~ .conditional,
+    #option-2:not(:checked) ~ .conditional {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+
+    * {
+        box-sizing: border-box;
+    }
+    #regForm {
+        margin: 0 auto;
+        padding: 40px;
+        width: 100%;
+        min-width: 300px;
+    }
+    .tab h1 {
+        text-align: center;
+    }
+    input, button, textarea, select {
+        border-radius: 4px;
+    }
+    input[type="text"], input[type="submit"] {
+        padding: 10px;
+        width: 100%;
+        font-size: 17px;
+        border: 1px solid #aaaaaa;
+    }
+    /* Mark input boxes that gets an error on validation: */
+    input.invalid {
+        background-color: #ffdddd;
+    }
+    /* Hide all steps by default: */
+    .tab {
+        display: none;
+    }
+    button {
+        background-color: #ce1141;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        cursor: pointer;
+    }
+    button:hover {
+        opacity: 0.8;
+    }
+    #prevBtn {
+        background-color: #bbbbbb;
+    }
+    /* Make circles that indicate the steps of the form: */
+    .step {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #ce1141;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.5;
+    }
+    .step.active {
+        opacity: 1;
+    }
+    /* Mark the steps that are finished and valid: */
+    .step.finish {
+        background-color: #ce1141;
+    }
+
+    .RequiredFieldMessage
+    {
+        color: Red;
+
+    }
+</style>
+<body>
+<form method="post" action="./" onsubmit="javascript:return WebForm_OnSubmit();" id="ctl01" enctype="multipart/form-data">
+    <div class="aspNetHidden">
+        <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+        <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+        <input type="hidden" name="aful1_ClientState" id="aful1_ClientState" value="" />
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="QbZeHO4bRkd0uIEHTt8fUufk84X0nqtCHghcuwXJ0PpI63TYtWhPrqFYU23pEbOS8rPFv69qYzYdz+K9sxb6uO9aTfzMwo1tN8vz8yJeBY4B0tLe7sreiK0vXMY08bOzVCGKQXLk4J+60RMAHkNA0p1z+4kwynMS2LcCcqRp95c5cr670mgoA3rVedBP6gZW93F9T8RBjUYxjqeq7YEVW5e/wj5BgAhQF8MkfXRj6FUTtnFjk9k/b9ax1JVBKvUHZvqO8XzP0d1ageJJTYYE8F8YX8oBlnft+WI9y9I3lm0=" />
+    </div>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        var theForm = document.forms['ctl01'];
+        if (!theForm) {
+            theForm = document.ctl01;
+        }
+        function __doPostBack(eventTarget, eventArgument) {
+            if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                theForm.__EVENTTARGET.value = eventTarget;
+                theForm.__EVENTARGUMENT.value = eventArgument;
+                theForm.submit();
+            }
+        }
+        //]]>
+    </script>
+
+
+    <script src="/Photocontest/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZFEwByouD_fDzZV3T3G0tqpvDgq60o3ic-9oXZaE6FX6YCr7STVqI4CJYg2lXR1btg2&amp;t=636354726046607314" type="text/javascript"></script>
+
+
+    <script src="/Photocontest/ScriptResource.axd?d=nv7asgRUU0tRmHNR2D6t1KPVeMUJh7GVKZ3mo447x66DS0zAmxDyKrRz-UIju5n5aVhuliLzevuTunIz1E81fprcj1pPT2WxWrOZyDRlslp_8ndWChVIwhpzaNr_eR0765yVHCKV-abimqoNyIFs1w2&amp;t=29ce779a" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvq1HAzhIkKGUIFqFerRHonE_LWjARM57SIt5DIHFJuvZHZr60h0-C3kzo_3wdf5NtxSpBe1FhlVndywtv1LdJh8OlvCzYz8P3YFe3XheR-mx1ZQE98LwxKRGfCLQC1-EuRcWctn1zHZfF6McSMUF4BE1&amp;t=3d6efc1f" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8OLGvDW5kutHIRZUxY2unu7Lj7RBrCt33Xo0q58KQgVYO33RnmhBspwGXqT2Ixa6tN8vq8W7ZhsIF5SU9H0C1-2pVMp6xxv-gfMhkAwt2WcotBTqxaRF99kLA9aJe3m9Ox4043ZcDvU-4QerPSM-0d6k1&amp;t=3d6efc1f" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=Xz2vUBiw-iW_eTyhK3lS4dHqj2RU2u20ufpYM4cg9oCIGvo2O8HGyqhZA-ng01alQesIKXMQ6yNi7dkKayoqR896sXRyN7GroJfYbJkNpHKS99YgsLFY9SmWjcmx_oj5rILjaA6rmB1oZctkinuuG9bnKrZpbe16vOKC-1ICiEk1&amp;t=3d6efc1f" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=eE6V8nDbUVn0gtG6hKNX_Jp692c4eZbvPNAc-YghO-RXTzxgWZUDSjmT2kyD6lD9O4ZTPys4OLmV-2F2OvfY4hsOuTK-WBlV42mtQTNwfRSHPel-tcsLWC1gdNul74q50&amp;t=27679117" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=mcAASOSteirJeuV-3by3UdpnL3qBK6rXg1nwmgYD8mtNzEHZh4q8zmGZUVqRLOWKbn81YpsaGJY129kowpUh22od8GVpGTJ_mN65_-A3mBw1&amp;t=27679117" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=jwf4VSQi7LeShc44FJ-gAbKdMtR8l6EHUOM_v4BkzwQQHVn7vtoEa6wO1C4n3U80SvqtIksgzs5D1OoVdrPxzpHQvzP18Ag3eZu9-nRk-4MYcXZlV2ATT-aoNzWxmP3n0&amp;t=27679117" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=HEFpVKbnoeQjkjHkFKu3MBOd36mVlDPqTcdXA0OMEp9uvhDYLSalC-Nf0DR_Up-M0WSDUmVbIbUWjSXdSiIVKkwFuXU3DLh2E7-BxzVwtDhbo2hGkMjApIOeBakIrDL20&amp;t=27679117" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=AoKJn7nMAVZSOkZkFwIO-ibhPo2q_9PRFKKSSzgv8D1oVDeBK_NRC5QaCoFh1RbfgVuKU0ytzY2lYF9m0uC1D_VpUg2K6v-AVq4ymaP5bvJt4Xe70_OKEKWID7vOk4zm0&amp;t=27679117" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=nai7mGcYyE2dix_TwveLDSnvuO5RPUt5G7pK7I75XwGEi45IyaEeboQBG00kU7zaSH6yqAvHsfFSfci9VhHM3UXC-O219SyPO7PWd1mEr1pKNxdlGOAz1n_X6zF-7Dor0&amp;t=27679117" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=yDT7ulzE00Yqzs5zd38bJze7ofLAw9t6V5AaWVtCLKP9R5wMBQZAMq10YhWj1zKFxSUylirCPQ3pe2KapHzq9LHdp3Sh7MdxVSUGJ73DzORlWKAnXnqIEiDH4jWxx5HK0&amp;t=27679117" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=5ib3lCcyinHeLQmkwMF7EmYAZzS_EhFZ-O03h5fAQ9CKla8NylaVK-YC7JDspyZ_B9T3gAX-1Va8pAQSMfUB7j_vkcVk9yOWdKorBgKWRIfM5b547qJpVDiBR-jLH0TA0&amp;t=27679117" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=iON9Jxe8QCRam1nkdNLgkdzLphFjGdTFkQMIrN7KFRYOz8CEQauAf8Ck15WRrMKHyy8PHBBCabh-0A4PzEYxuooUnQMHm45PyYgXJyj7JX18bsULawty1CUYDcsHz7qQ0&amp;t=27679117" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=xGmPTKfsNy0_1Sr5I58kO_CkmE1IlBQwjClrZY7mLKn3AZh2VU0Zy8mV8sGvk7BU0l2QpBYx7OaW8gdxAXhxHiRliSCq0ewNXZ4abE23jMP-tE2QDreZdliplD7U2kth0&amp;t=27679117" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=LQ1q2RBSthBAZhliMjtG_8LqaliKV7-DiC6OIdsFfrmQU29bv2OSeu1R3tg7GLOFfBsEweF-jRfFt1Y14aNC7J6X0cps0g3PcFksyD6hpZZD7nxDRDzniHVll0sOXhvT0&amp;t=27679117" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=VOYD8Xe7kQA0lniBYXVpAgi0qCFooJO9KfOsdVrWH9RycGBXaRDrzGDGubi6M-F8UshmD5NqWbhCt8CXfQo1xRrY25sQNof3Ggq_0RVerqmLNQas4jwZbY4dxIrLMIUh0&amp;t=27679117" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=hOeJu0xhC-uW6Gf8ooKdXjQsp5X7I9WUue_utOoaZMEUN5raAWAASCfnPj_KrfnIUP7Slh44YW-j9Wofu6xxybXSRToTsi7P8PCAjyPDoQfPQuinLmg1NwPsacNCzMXT0&amp;t=27679117" type="text/javascript"></script>
+    <script src="/Photocontest/ScriptResource.axd?d=XlV9GqTk6b5uqDuL38kZ4Eibzhj88_HQGo_bFnov47u7Qm7t51v3CCZwBRptKeW3HXuzaRgqYAtZx3GvJpdgtFYhZCWt3w9WJkle7PixGvrxKKnOP7FF6wYXrAc2SioL0&amp;t=27679117" type="text/javascript"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        function WebForm_OnSubmit() {
+            if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+            return true;
+        }
+        //]]>
+    </script>
+
+    <div class="aspNetHidden">
+
+        <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="33443FA5" />
+        <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="yTM5zjczK4/gy/Wc10iDdf7nizCf3kkaOUwShJk0JzITkFgGjdiaKylyik3sgiLK2cNgBw5L0MQKTuTtDPOrrXp1D2Z9AG11a7+kdlF5fvLXmF5/XZ05vz9dK0cxJag9qEAUL3aoYQYfJ+asv3qvam4oempVGwSCalEW2s5ag8anGF9/bNivy1FyzlWiJxm8VZVFvtAyiqN/Xuo77ur7AGmDCHjQKY6R9sS/rYOq2fIah4ClkuFpaKI6Q8shBnOa9pImWOk2QlD2sQdROZAFhxneZfZmF7vO60VqEbJcSOyAFxIkYSnx0dpINunDYc3OFJO4ND6NVrdXBs6AE4l5FzBi7LzZ8UwM/yb++IReKkA6PJrcD6XHeEcKCHcziMdi" />
+    </div>
+    <script type="text/javascript">
+        //<![CDATA[
+        Sys.WebForms.PageRequestManager._initialize('ctl07', 'ctl01', ['tctl08','ctl08'], [], ['btnSubmit','btnSubmit'], 90, '');
+        //]]>
+    </script>
+
+    <nav class="container">
+        <div class="navTop">
+            <div class="float-left" style="border-right:1px solid #e6e6e6; padding-top: 10px; padding-bottom: 11px;"><a href="https://www.weatherford.com"><img src="http://storage.pardot.com/29002/5866/brand_template_d.jpg"></a></div>
+            <!--<div class="float-right" style="border-left:1px solid #e6e6e6;"><img src="images/icons/global.png"></div>-->
+            <div class="float-right" style="border-left:1px solid #e6e6e6; padding:10px 15px;"><a href="javascript:void(0)" id="navToSocial"><img src="images/icons/social.png"></a></div>
+            <div class="clearfix" style="padding: 0;"></div>
+        </div>
+        <div class="navBottom">
+            <div id="pageTitle"><a href="#">Employee Photo and Video Contest</a></div>
+        </div>
+    </nav>
+    <section id="titleSection">
+        <div class="heroImg">
+            <img src="images/photocontest-hero.jpg">
+            <div class="heroText">
+                <div class="container">
+                    <span style="font-size: 7em; line-height: .8em; font-weight: bold;">2017</span>
+                    <h1>Photo and Video<br>
+                        Contest</h1>
+                    <p>
+                        <br>
+                        See 2016 winners
+                        <br>
+                        See 2015 winners
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="alertBanner">
+        <div class="alertMessage">
+            Please read the contest details. The deadline is: <b>2 FEBRUARY 2018</b>.
+        </div>
+    </section>
+
+    <section id="infoSection">
+        <div class="container">
+            <br>
+            <p style="width: 850px;">We are excited to announce the 2017 Weatherford Employee Photo and Video Contest. We are looking for photos and videos that display the best of Weatherford in the following three categories: teamwork, facilities, and technology. Submit your photos and videos today for a chance to win a brand new camera!</p>
+            <p>Be sure to view the <a href="#" style="color:#CE1141">Contest Guidelines</a> for additional details and entry requirements.</p>
+            <p>The deadline for submissions is 2 FEBRUARY 2018.</p>
+            <br>
+        </div>
+    </section>
+
+    <section id="fullForm" class="container">
+        <div class="row">
+            <div id="formMain" class="col-md-8">
+                <div class="formSection">
+                    <h2>Employee Information</h2>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2">City/Country: </label>
+                        <div class="col-sm-10">
+                            <input name="txtCityCountry" type="text" id="txtCityCountry" class="form-control" />
+                            <span id="RequiredFieldValidator4" class="RequiredFieldMessage" style="display:none;">*</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="formSection">
+                    <h2>Photo/Video Information</h2>
+                    <div class="form-group row">
+                        <label for="Category" class="col-sm-2 col-form-label">Category:</label>
+                        <div class="col-sm-10">
+                            <select name="Category" id="Category" class="form-control">
+                                <option value=""></option>
+                                <option value="Teamwork">Teamwork</option>
+                                <option value="Facilities">Facilities</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+                            <span id="RequiredFieldValidator1" class="RequiredFieldMessage" style="display:none;">* Category is empty</span>
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Entry Title: </label>
+                        <div class="col-sm-10">
+                            <textarea name="Title" id="Title" class="form-control" maxlength="100"></textarea>
+                            <div class="subtext">Describe your image/video. Maximum 100 characters. No HTML allowed. </div>
+                            <span id="RequiredFieldValidator6" class="RequiredFieldMessage" style="display:none;">*</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2">Tags: </label>
+                        <div class="col-sm-10">
+                            <input name="Tag" type="text" id="Tag" class="form-control" maxlength="80" />
+                        </div>
+                    </div>
+                    <div id="ctl08">
+
+                        <span id="updTimer" style="visibility:hidden;display:none;"></span>
+                        <div id="Panel1">
+
+                            <div class="form-group row">
+                                <label class="col-md-2 col-form-label">File:</label>
+                                <div class="col-sm-10">
+                                    <div id="aful1">
+                                        <input type="hidden" name="aful1$ctl00" id="aful1_ctl00" class="fileUpload" /><label></label>
+                                        <div id="aful1_ctl01"><input name="aful1$ctl02" type="file" id="aful1_ctl02" style="width:355px;" /></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div>
+                                <p>
+                                    Is the subject(s) uniquely recognizable?&nbsp;
+
+                                    <input id="showModel" name="modelRadio" type="radio" onclick="" /><label for="showModel">Yes</label>&nbsp;
+                                    <input id="hideModel" name="modelRadio" type="radio" /><label for="hideModel">No</label>
+                                </p>
+                                <br />
+                                <div id="Model_Box" style="display: none;">
+                                    <h2>Model Release</h2>
+                                    <p class="subtext">All photographed or videographed employees must sign a Weatherford Modeling Release form. Please list the full name and email address of all models in the field below.</p>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label" for="desc">Model Information: </label>
+                                        <div class="col-sm-10">
+                                            <textarea name="desc" id="desc" class="form-control" placeholder="Name, Email@Weatherford.com; Name, Email@Weatherford.com"></textarea>
+                                        </div>
+                                    </div>
+                                    <br />
+                                </div>
+                                <h2>Disclaimers</h2>
+                                <div id="termsGroup">
+                                    <input id="Terms_Checkbox" type="checkbox" name="Terms_Checkbox" required> I agree to the <a href="" style="color:#CE1141">Terms and Conditions</a> of the 2017 Weatherford Employee Photo and Video Contest.
+                                </div>
+                                <div id="consentGroup">
+                                    <input id="Consent_Checkbox" type="checkbox" name="Consent_Checkbox" required> By submitting my photo(s) and video(s) to the Weatherford Employee Photo and Video Contest, I grant to Weatherford the right to edit and use the photo and/or video.
+                                    <br /><br />
+                                    <label style="font-size:10px;"><i>As a participant of the Weatherford Employee Photo and Video Contest, your name and entry may appear on Weatherford web and social media. This recognition may bring added attention to your personal online presence. We recommend that you review your personal social media privacy settings and also consult our Corporate Communications Standard for guidance.</i></label>
+
+                                </div>
+
+                                <div id="hp_captcha" style="display: none;">
+                                    <label for="hp_field"></label>
+                                    <input id="hp_field" name="hp_field" type="text" value="" onkeyup="hp_check()" />
+                                </div>
+
+                            </div>
+                            <div id="submitButton" class="float-right">
+                                <input type="submit" name="btnSubmit" value="Submit" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;btnSubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="btnSubmit" class="btn btn-primary" />
+                            </div>
+
+                            <input type="submit" name="controlButton" value="" id="controlButton" style="display: none;" />
+
+
+                            <div id="PopUpPanel" style="display: none; width: 420px; height: auto; background-color: White; border-width: 2px; border-color: blue; border-style: solid; padding: 10px;">
+
+                                <div>
+                                    <img id="Image1" src="images/ajax-loader1.gif" />
+                                    <br />
+                                    <span id="msgLable"></span>
+                                    <input type="submit" name="CancelPopup" value="Close" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;CancelPopup&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="CancelPopup" />
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                    <div class="clearfix"></div>
+                    <script>
+                        var hp_value = document.getElementById("hp_field");
+                        var submit_btn = document.getElementById("submit-btn");
+                        function hp_check() {
+                            if (hp_value != null) {
+                                submit_btn.disabled = true;
+                            }
+                        }
+
+                        //function success() {
+                        //    var fu = document.getElementById("aful1");
+                        //    document.getElementById("aful1").innerHTML = fu.innerHTML;
+                        //}
+                    </script>
+                </div>
+
+            </div>
+            <div id="formSidebar" class="col-md-4">
+                <div class="sidebarTitle">Helpful Links</div>
+                <div class="formSection">
+                    <ul>
+                        <li><a href="http://515ecm/dn/WFT303866">Corporate Communications Standard</a></li>
+                        <li><a href="">Model Release Form</a></li>
+                        <li><a href="">Official Rules</a></li>
+                        <li><a href="">Contest Entry Form</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebarTitle">Photo Requirements</div>
+                <div class="formSection">
+                    <ul>
+                        <li>Must be of print-quality resolution</li>
+                        <li>Take candid shots of people</li>
+                        <li>Ensure that all safety requirements are being met including proper PPE</li>
+                        <li>Photos taken at a client's location must not capture any distinguishing features</li>
+                        <li>Weatherford logo must be brand compliant</li>
+                        <li>Do not use any filtering software or application (upload raw file)</li>
+                        <li>See full photo requirements <a href="faqs.html">here</a>.</li>
+                    </ul>
+                </div>
+
+                <div class="sidebarTitle">Trouble Uploading?</div>
+                <div class="formSection">
+                    <p>Contact Us at <a href="mailto:corporatemarketing@weatherford.com?subject=2017 Weatherford Photo and Video Contest">corporatemarketing@weatherford.com</a></p>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <footer>
+        <img src="images/photocontest-footer.jpg" class="img-fluid" />
+    </footer>
+    <script src="Scripts/_references.js"></script>
+    <script src="Scripts/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+
+    <script>
+        var $input = $('.fileUpload'),
+            $label = $input.next('label'),
+            labelVal = $label.html();
+
+        $input.on('change', function (e) {
+            var fileName = '';
+
+            if (e.target.value) {
+                fileName = e.target.value.split('\\').pop();
+                $label.find('span').html(fileName);
+            }
+            else
+                $label.html(labelVal);
+        });
+
+        $('input[type="radio"]').click(function () {
+            if ($(this).attr('id') == 'showModel') {
+                $('#Model_Box').show();
+                $('#desc').prop('required', true);
+            }
+
+            else {
+                $('#Model_Box').hide();
+                $('#desc').prop('required', false);
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        var Page_Validators =  new Array(document.getElementById("RequiredFieldValidator4"), document.getElementById("RequiredFieldValidator1"), document.getElementById("RequiredFieldValidator6"));
+        //]]>
+    </script>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        var RequiredFieldValidator4 = document.all ? document.all["RequiredFieldValidator4"] : document.getElementById("RequiredFieldValidator4");
+        RequiredFieldValidator4.controltovalidate = "txtCityCountry";
+        RequiredFieldValidator4.errormessage = "*";
+        RequiredFieldValidator4.display = "Dynamic";
+        RequiredFieldValidator4.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+        RequiredFieldValidator4.initialvalue = "";
+        var RequiredFieldValidator1 = document.all ? document.all["RequiredFieldValidator1"] : document.getElementById("RequiredFieldValidator1");
+        RequiredFieldValidator1.controltovalidate = "Category";
+        RequiredFieldValidator1.errormessage = "* Category is empty";
+        RequiredFieldValidator1.display = "Dynamic";
+        RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+        RequiredFieldValidator1.initialvalue = "";
+        var RequiredFieldValidator6 = document.all ? document.all["RequiredFieldValidator6"] : document.getElementById("RequiredFieldValidator6");
+        RequiredFieldValidator6.controltovalidate = "Title";
+        RequiredFieldValidator6.errormessage = "*";
+        RequiredFieldValidator6.display = "Dynamic";
+        RequiredFieldValidator6.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+        RequiredFieldValidator6.initialvalue = "";
+        //]]>
+    </script>
+
+
+    <script type="text/javascript">
+        //<![CDATA[
+
+        var Page_ValidationActive = false;
+        if (typeof(ValidatorOnLoad) == "function") {
+            ValidatorOnLoad();
+        }
+
+        function ValidatorOnSubmit() {
+            if (Page_ValidationActive) {
+                return ValidatorCommonOnSubmit();
+            }
+            else {
+                return true;
+            }
+        }
+
+        document.getElementById('RequiredFieldValidator4').dispose = function() {
+            Array.remove(Page_Validators, document.getElementById('RequiredFieldValidator4'));
+        }
+
+        document.getElementById('RequiredFieldValidator1').dispose = function() {
+            Array.remove(Page_Validators, document.getElementById('RequiredFieldValidator1'));
+        }
+
+        document.getElementById('RequiredFieldValidator6').dispose = function() {
+            Array.remove(Page_Validators, document.getElementById('RequiredFieldValidator6'));
+        }
+        Sys.Application.add_init(function() {
+            $create(Sys.UI._Timer, {"enabled":false,"interval":2000,"uniqueID":"updTimer"}, null, null, $get("updTimer"));
+        });
+        Sys.Application.add_init(function() {
+            $create(Sys.Extended.UI.AsyncFileUpload, {"clientStateField":$get("aful1_ClientState"),"completeBackColor":"Lime","errorBackColor":"Red","formName":"ctl01","hiddenField":$get("aful1_ctl00"),"inputFile":$get("aful1_ctl02"),"postBackUrl":"/PhotoContest/","throbber":$get("imgLoader"),"uploadingBackColor":"White"}, null, null, $get("aful1"));
+        });
+        Sys.Application.add_init(function() {
+            $create(Sys.Extended.UI.ModalPopupBehavior, {"cancelControlID":"CancelPopup","dynamicServicePath":"/PhotoContest/default.aspx","id":"modelPopup","popupControlID":"PopUpPanel"}, null, null, $get("controlButton"));
+        });
+        //]]>
+    </script>
+</form>
+</body>
+</html>
